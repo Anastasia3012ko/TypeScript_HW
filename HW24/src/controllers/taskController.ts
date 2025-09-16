@@ -1,12 +1,16 @@
 import {Request, Response } from "express";
-import User from "../models/productSchema.js";
+import User from "../models/userSchema.js";
 
 //createUser
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const { name, age }: { name: string, age?: number } = req.body;
-    const user = await User.create(req.body);
-    res.status(201).json({message: 'User created successfully', user});
+    const user = req.body;
+    if(!user.name) {
+        return res.send({error: 'Name is required'})
+    }
+
+    const newUser = await User.create(req.body);
+    res.status(201).json({message: 'User created successfully', newUser});
   } catch (err) {
     res.status(400).json({ error: (err as Error).message });
   }
