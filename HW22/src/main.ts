@@ -26,10 +26,10 @@ const user1 = new UserManagement.Admin.AdminUser('Max','max@gmail.com', false);
 const user2 = new UserManagement.Admin.AdminUser('Anna','anna@gmail.com', true);
 
 user1.displayFirstInfo();
-console.log(`${user1.name}, ${user1.changeStatus()}`);
+console.log(`${user1.name}, ${user1.toggleStatus()}`);
 
 user2.displayFirstInfo();
-console.log(`${user2.name}, ${user2.changeStatus()}`);
+console.log(`${user2.name}, ${user2.toggleStatus()}`);
 
 //Task 4
 console.log('Task 4:');
