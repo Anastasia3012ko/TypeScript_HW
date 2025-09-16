@@ -1,14 +1,13 @@
-import { log } from "console";
 
 interface Product {
     name: string;
     price: number;
 }
-interface calculateDiscount {
+interface CalculateDiscount {
     (product: Product, discount: number): number
 }
 
-const newPrice: calculateDiscount = (product, discount) => {
+const newPrice: CalculateDiscount = (product, discount) => {
     return product.price - (product.price * discount) / 100;
 }
 
